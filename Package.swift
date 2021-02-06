@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Kroma",
+    platforms: [.iOS(.v14), .tvOS(.v11)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
