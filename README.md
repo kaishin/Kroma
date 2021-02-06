@@ -1,6 +1,4 @@
-<img src="https://github.com/kaishin/Kroma/raw/main/logo.png?raw=true" alt="Logo" width="200">
-
-# Kroma
+# Kroma 🟥🟩🟦
 
 ![Test](https://github.com/kaishin/Kroma/workflows/Test/badge.svg)
 [![GitHub release](https://img.shields.io/github/release/kaishin/Kroma.svg)](https://github.com/kaishin/Kroma/releases/latest) 
@@ -17,7 +15,7 @@ Add Korma as a dependency in your `Package.swift` file:
 ```swift
 dependencies: [
   ...
- .package(url: "https://github.com/kaishin/Kroma.git", from: "3.2.2")
+ .package(url: "https://github.com/kaishin/Kroma.git", from: "0.1.0")
 ]
 ```
 

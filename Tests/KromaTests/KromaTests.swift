@@ -3,7 +3,6 @@ import SwiftUI
 @testable import Kroma
 
 final class KromaTests: XCTestCase {
-
   func testRGBComponentsCustomColor() {
     let color = Color(.sRGB, red: 0.5, green: 0.5, blue: 0.5, opacity: 1.0)
     let rgb = color.rgbComponents
@@ -13,7 +12,7 @@ final class KromaTests: XCTestCase {
   }
 
   func testRGBComponentsPredefinedColor() {
-    let rgb = Color.purple.rgbComponents
+    let rgb = Color(.sRGB, red: 0.686, green: 0.322, blue: 0.871, opacity: 1.0).rgbComponents
     XCTAssertEqual(round(rgb.red * 255), 175)
     XCTAssertEqual(round(rgb.green * 255), 82)
     XCTAssertEqual(round(rgb.blue * 255), 222)
@@ -44,8 +43,8 @@ final class KromaTests: XCTestCase {
   }
 
   func testLuma() {
-    let color = Color.purple
-    XCTAssertLessThanOrEqual(color.luma - 0.438, 0.001)
+    let color = Color(.sRGB, red: 0.686, green: 0.322, blue: 0.871, opacity: 1.0)
+    XCTAssertLessThanOrEqual(color.luma - 0.439, 0.001)
   }
 
   func testIsLight() {
