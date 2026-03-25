@@ -53,4 +53,44 @@ final class KromaTests: XCTestCase {
     XCTAssertTrue(Color.yellow.isLight)
     XCTAssertFalse(Color.red.isLight)
   }
+
+  func testHexInitializer6Digit() {
+    let color = Color(hex: "#FF0000")
+    let rgb = color.rgbComponents
+    XCTAssertEqual(rgb.red, 1.0)
+    XCTAssertEqual(rgb.green, 0.0)
+    XCTAssertEqual(rgb.blue, 0.0)
+  }
+
+  func testHexInitializer3Digit() {
+    let color = Color(hex: "#F00")
+    let rgb = color.rgbComponents
+    XCTAssertEqual(rgb.red, 1.0)
+    XCTAssertEqual(rgb.green, 0.0)
+    XCTAssertEqual(rgb.blue, 0.0)
+  }
+
+  func testHexInitializer8Digit() {
+    let color = Color(hex: "#FF000080")
+    let rgb = color.rgbComponents
+    XCTAssertEqual(rgb.red, 1.0)
+    XCTAssertEqual(rgb.green, 0.0)
+    XCTAssertEqual(rgb.blue, 0.0)
+  }
+
+  func testHexInitializerWithoutHash() {
+    let color = Color(hex: "0000FF")
+    let rgb = color.rgbComponents
+    XCTAssertEqual(rgb.red, 0.0)
+    XCTAssertEqual(rgb.green, 0.0)
+    XCTAssertEqual(rgb.blue, 1.0)
+  }
+
+  func testHexInitializerMixedCase() {
+    let color = Color(hex: "#AaBbCc")
+    let rgb = color.rgbComponents
+    XCTAssertEqual(round(rgb.red * 255), 170)
+    XCTAssertEqual(round(rgb.green * 255), 187)
+    XCTAssertEqual(round(rgb.blue * 255), 204)
+  }
 }
