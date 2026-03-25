@@ -10,9 +10,9 @@ on:
 
 jobs:
   build:
-    runs-on: macos-11.0
+    runs-on: macos-15
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
     - name: Run tests
       run: swift test
