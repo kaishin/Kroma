@@ -93,12 +93,7 @@ extension Color {
 extension Color {
   public func lighter(by value: Double = 0.1) -> Self {
     let rgb = rgbComponents.lighter(by: value)
-
-    return .init(
-      red: min(rgb.red + value, 1),
-      green: min(rgb.green + value, 1),
-      blue: min(rgb.blue + value, 1)
-    )
+    return .init(red: rgb.red, green: rgb.green, blue: rgb.blue)
   }
 
   public func darker(by value: Double = 0.1) -> Self {
