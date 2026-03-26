@@ -2,7 +2,7 @@
 
 ![Test](https://github.com/kaishin/Kroma/workflows/Test/badge.svg)
 [![GitHub release](https://img.shields.io/github/release/kaishin/Kroma.svg)](https://github.com/kaishin/Kroma/releases/latest) 
-![Swift 5.3](https://img.shields.io/badge/Swift-5.3-orange.svg) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS-lightgrey.svg)
+![Swift 6](https://img.shields.io/badge/Swift-6-orange.svg) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20macOS%20%7C%20tvOS%20%7C%20watchOS-lightgrey.svg)
 
 A collection of color extensions and utilities for SwiftUI.
 
@@ -10,12 +10,12 @@ A collection of color extensions and utilities for SwiftUI.
 
 #### Swift Package Manager (Standalone)
 
-Add Korma as a dependency in your `Package.swift` file:
+Add Kroma as a dependency in your `Package.swift` file:
 
 ```swift
 dependencies: [
   ...
- .package(url: "https://github.com/kaishin/Kroma.git", from: "0.1.0")
+ .package(url: "https://github.com/kaishin/Kroma.git", from: "0.2.0")
 ]
 ```
 
@@ -24,6 +24,15 @@ dependencies: [
 Add `https://github.com/kaishin/Kroma.git` as a dependency in the _Swift Packages_ tab of the Xcode project.
 
 ## Usage
+
+### Initialize from Hex String
+
+```swift
+Color(hex: "#FF5733")
+Color(hex: "FF5733")   // # is optional
+Color(hex: "F00")      // 3-digit shorthand
+Color(hex: "FF573380") // 8-digit with alpha
+```
 
 ### Inspect Color Components
 
@@ -44,8 +53,8 @@ Color.purple.rgbComponents.toHSB()
 
 ```swift
 Color.purple.rgbComponents // (0.686, 0.322, 0.871)
-Color.purple.lighter(by: 0.1).rgbComponents // (0.88, 0.52, 1.0)
-Color.purple.darker(by: 0.1).rgbComponents // (0.48, 0.12, 0.67)
+Color.purple.lighter(by: 0.1).rgbComponents // (0.786, 0.422, 0.971)
+Color.purple.darker(by: 0.1).rgbComponents // (0.586, 0.222, 0.771)
 ```
 
 ### Get Luma Value of a Color
